@@ -4,32 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tope Professional Portfolio - Home</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Tope Professional Portfolio</h1>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Tope's Portfolio</h1>
+            <p class="subtitle">Computer Science Student & Developer</p>
+        </div>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
         <a href="skills.html">Skills & Achievements</a>
         <a href="work.html">Work Examples</a>
         <a href="learning.html">Learning Log</a>
     </nav>
-    <div class="container">
-        <div class="profile-section">
+
+    <!-- Main Content Area -->
+    <main class="container">
+        <section class="profile-card">
             <div class="profile-text">
-                <h2>Tope Personal Profile</h2>
-                <p>I am a first-year Computer Science student passionate about digital devices and understanding the intricacies of how they function. My academic journey has already equipped me with strong programming skills in C++ and Python, complemented by practical experience in web design and game development.</p>
-                <p>I enjoy building interactive applications and exploring how software interacts with hardware, having worked on projects involving responsive web platforms, game logic, and secure script execution in C++ and Python. My goal is to contribute to pioneering projects in cybersecurity and software engineering, and I am eager to apply my skills in real-world scenarios while continuing to learn in a dynamic professional environment</p>
-                <h3>Connect with Me</h3>
-                <a href="https://olympus.ntu.ac.uk/dashboard" target="_blank" rel="noopener noreferrer">GitHub </a>
-                <p><strong>LinkedIn:</strong> <a href="[Your LinkedIn URL]">[Your LinkedIn Name]</a></p>
+                <h2>Personal Profile</h2>
+                <p>I am a first-year Computer Science student passionate about digital devices and understanding the intricacies of how they function. My academic journey has equipped me with strong programming skills in C++ and Python, complemented by practical experience in web design and game development.</p>
+                <p>I enjoy building interactive applications and exploring how software interacts with hardware, having worked on projects involving responsive web platforms, game logic, and secure script execution. My goal is to contribute to pioneering projects in cybersecurity and software engineering, and I am eager to apply my skills in real-world scenarios while continuing to learn in a dynamic professional environment.</p>
+                
+                <div class="connect-section">
+                    <h3>Connect with Me</h3>
+                    <div class="social-links">
+                        <a href="https://olympus.ntu.ac.uk/dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-github">GitHub</a>
+                        <a href="[Your LinkedIn URL]" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">LinkedIn</a>
+                    </div>
+                </div>
             </div>
-            <div class="Profile-image">
-                <img src="IMG_8885.webp" alt="Profile Picture of Tope" style="width: 200px; height: auto;">
+
+            <div class="profile-image-container">
+                <img src="IMG_8885.webp" alt="Profile Picture of Tope" class="profile-img">
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
 </body>
 </html>
