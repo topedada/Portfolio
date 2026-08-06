@@ -63,21 +63,23 @@ University Desktop </p>
             <h3>User interface Design</h3>
             <p><strong>Description:</strong> As the UI Designer, the design work focused on creating the administration and employee interface views for the SwiftChat system proposal. Built around intuitive navigation, clear layouts, and high usability, the designs were structured to mirror familiar industry-standard platforms—ensuring users of any skill level could effortlessly manage workspaces, communicate, and access features without a learning curve</p>
             
-            
-        <!-- UI Image Gallery -->
+        <h3 style="font-family: sans-serif; font-size: 18px; color: #333; margin-bottom: 10px;">
+    Interactive UI Previews (Click to expand)
+</h3>    
+        
 <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
     <img src="Admin.png" alt="Admin UI" class="ui-preview-img" onclick="openModal(this)">
     <img src="employee.png" alt="Employee UI" class="ui-preview-img" onclick="openModal(this)">
 </div>
 
-<!-- Modal Pop-up Box for Full-Size Image -->
+
 <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="fullImage">
 </div>
 
 <style>
-/* Image Box Styles */
+
 .ui-preview-img {
     width: 48%;
     height: auto;
@@ -93,7 +95,7 @@ University Desktop </p>
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Modal Overlay Background */
+
 .modal {
     display: none;
     position: fixed;
@@ -109,7 +111,7 @@ University Desktop </p>
     cursor: zoom-out;
 }
 
-/* Enlarged Image Style */
+
 .modal-content {
     max-width: 90%;
     max-height: 90%;
@@ -118,7 +120,7 @@ University Desktop </p>
     animation: zoomIn 0.2s ease-out;
 }
 
-/* Close Button (top-right) */
+
 .close-btn {
     position: absolute;
     top: 20px;
@@ -129,7 +131,7 @@ University Desktop </p>
     cursor: pointer;
 }
 
-/* Smooth Opening Animation */
+
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
