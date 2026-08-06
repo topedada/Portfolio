@@ -64,11 +64,91 @@ University Desktop </p>
             <p><strong>Description:</strong> As the UI Designer, the design work focused on creating the administration and employee interface views for the SwiftChat system proposal. Built around intuitive navigation, clear layouts, and high usability, the designs were structured to mirror familiar industry-standard platforms—ensuring users of any skill level could effortlessly manage workspaces, communicate, and access features without a learning curve</p>
             
             
-            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
-    <img src="Admin.png" alt="Admin UI" style="width: 48%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
-    
-    <img src="employee.png" alt="Employee UI" style="width: 48%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+        <!-- UI Image Gallery -->
+<div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+    <img src="Admin.png" alt="Admin UI" class="ui-preview-img" onclick="openModal(this)">
+    <img src="employee.png" alt="Employee UI" class="ui-preview-img" onclick="openModal(this)">
 </div>
+
+<!-- Modal Pop-up Box for Full-Size Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="fullImage">
+</div>
+
+<style>
+/* Image Box Styles */
+.ui-preview-img {
+    width: 48%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ui-preview-img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Modal Overlay Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+/* Enlarged Image Style */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoomIn 0.2s ease-out;
+}
+
+/* Close Button (top-right) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Smooth Opening Animation */
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+</style>
+
+<script>
+function openModal(imgElement) {
+    const modal = document.getElementById("imageModal");
+    const fullImg = document.getElementById("fullImage");
+    modal.style.display = "flex";
+    fullImg.src = imgElement.src;
+    fullImg.alt = imgElement.alt;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+</script>    
 
             
             <div>
