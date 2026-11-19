@@ -1,39 +1,15 @@
 
-/* =========================================================
-   1. DESIGN SYSTEM & VARIABLES
-========================================================= */
-
 :root {
-    --primary-color: #080e1c;
-    --secondary-color: #111c32;
-
-    --accent-color: #3b82f6;
-    --accent-secondary: #8b5cf6;
-    --accent-hover: #2563eb;
-
-    --bg-color: #f1f5f9;
-    --card-bg: rgba(255, 255, 255, 0.88);
-
-    --text-main: #475569;
+    --primary-color: #0f172a;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #334155;
     --text-heading: #0f172a;
-    --text-light: #94a3b8;
-
-    --border-color: rgba(148, 163, 184, 0.2);
-
-    --border-radius: 18px;
-    --border-radius-lg: 26px;
-
-    --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.04);
-    --shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
-    --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.13);
-
-    --transition: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --border-radius: 12px;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
-
-
-/* =========================================================
-   2. GLOBAL RESET
-========================================================= */
 
 * {
     box-sizing: border-box;
@@ -41,670 +17,170 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
 body {
-    font-family: 'Inter', system-ui, -apple-system,
-        BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
-    background:
-        radial-gradient(circle at 10% 10%, rgba(59,130,246,0.05), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(139,92,246,0.05), transparent 30%),
-        var(--bg-color);
-
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-::selection {
-    background: var(--accent-color);
-    color: white;
-}
-
-a {
-    color: inherit;
+    line-height: 1.6;
 }
 
 
-/* =========================================================
-   3. ANIMATIONS
-========================================================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(59,130,246,0.25);
-    }
-
-    50% {
-        box-shadow: 0 0 0 12px rgba(59,130,246,0);
-    }
-}
-
-@keyframes rotateGlow {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-/* =========================================================
-   4. HEADER / HERO
-========================================================= */
-
-header,
-.main-header {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    background:
-        radial-gradient(circle at 15% 30%, rgba(59,130,246,0.22), transparent 35%),
-        radial-gradient(circle at 85% 70%, rgba(139,92,246,0.20), transparent 35%),
-        linear-gradient(135deg, #080e1c, #172744, #080e1c);
-
-    background-size: 200% 200%;
-    animation: gradientMove 12s ease infinite;
-
-    color: white !important;
-    padding: 6rem 1.5rem 5rem !important;
+header, .main-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    color: #ffffff !important;
+    padding: 3rem 1.5rem 2rem 1.5rem !important;
     text-align: center;
 }
 
-header::before,
-.main-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background-image:
-        radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
-
-    background-size: 35px 35px;
-    opacity: 0.35;
-    mask-image: linear-gradient(to bottom, black, transparent);
-}
-
-header h1,
-.header-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -2px;
-    line-height: 1.15;
-    margin-bottom: 1rem;
-
-    color: white !important;
-
-    animation: fadeUp 0.8s ease both;
+header h1, .header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff !important;
 }
 
 .subtitle {
-    color: #b8c7df;
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 400;
-    max-width: 650px;
-    margin: 0 auto;
-
-    animation: fadeUp 1s ease both;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    font-weight: 300;
 }
 
 
-/* =========================================================
-   5. NAVIGATION
-========================================================= */
-
-nav,
-.navbar {
+nav, .navbar {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 1000;
-
-    padding: 1rem 1.5rem;
-
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px rgba(15,23,42,0.04);
+    z-index: 100;
 }
 
-nav a,
-.navbar a {
-    position: relative;
+nav a, .navbar a {
     text-decoration: none;
-
-    color: #475569;
-    font-size: 0.92rem;
+    color: var(--text-main);
     font-weight: 600;
-
-    padding: 10px 19px;
-    border-radius: 12px;
-
-    transition: var(--transition);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
 }
 
-nav a::after,
-.navbar a::after {
-    content: "";
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--accent-color);
-    transition: var(--transition);
-    transform: translateX(-50%);
-}
-
-nav a:hover,
-.navbar a:hover {
+nav a:hover, .navbar a:hover {
+    background-color: #f1f5f9;
     color: var(--accent-color);
-    background: rgba(59,130,246,0.07);
-    transform: translateY(-2px);
 }
 
-nav a:hover::after,
-.navbar a:hover::after {
-    width: 35%;
+nav a.active, .navbar a.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
 }
 
-nav a.active,
-.navbar a.active {
-    background: var(--accent-color);
-    color: white;
-    box-shadow: 0 5px 15px rgba(59,130,246,0.25);
-}
-
-nav a.active::after,
-.navbar a.active::after {
-    display: none;
-}
-
-
-/* =========================================================
-   6. MAIN CONTAINER
-========================================================= */
 
 .container {
-    width: min(1100px, calc(100% - 40px));
-    margin: 4rem auto;
-    animation: fadeIn 0.8s ease both;
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
 }
 
 
-/* =========================================================
-   7. CARDS / SECTIONS
-========================================================= */
-
-.profile-section,
-.profile-card,
-.project,
-.testing,
-.report,
-.design {
-    position: relative;
-    overflow: hidden;
-
-    background: var(--card-bg);
-
-    border: 1px solid rgba(255,255,255,0.8);
-    border-radius: var(--border-radius-lg);
-
+.profile-section, .profile-card, .project, .testing, .report, .design {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
     padding: 2.5rem;
-    margin-bottom: 2rem;
-
     box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-/* Subtle blue accent line */
-
-.profile-section::before,
-.profile-card::before,
-.project::before,
-.testing::before,
-.report::before,
-.design::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: linear-gradient(
-        90deg,
-        var(--accent-color),
-        var(--accent-secondary),
-        transparent
-    );
-
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.project:hover,
-.testing:hover,
-.report:hover,
-.design:hover,
-.profile-card:hover,
-.profile-section:hover {
-    transform: translateY(-7px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(59,130,246,0.2);
-}
-
-.project:hover::before,
-.testing:hover::before,
-.report:hover::before,
-.design:hover::before,
-.profile-card:hover::before,
-.profile-section:hover::before {
-    opacity: 1;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
 }
 
 
-
-
-.profile-section,
-.profile-card {
+.profile-section, .profile-card {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
 .profile-text {
     flex: 2;
 }
 
-.profile-text h2,
-h2 {
+.profile-text h2, h2 {
+    font-size: 1.8rem;
     color: var(--text-heading);
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-    font-weight: 750;
-    letter-spacing: -0.7px;
-    line-height: 1.3;
-    margin-bottom: 1.2rem;
-}
-
-.profile-text p,
-p {
-    color: var(--text-main);
-    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
-.profile-text p {
-    max-width: 650px;
+.profile-text p, p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 
-
-
-.Profile-image,
-.profile-image-container {
+.Profile-image, .profile-image-container {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.Profile-image img,
-.profile-img {
-    width: 230px !important;
-    height: 230px !important;
-
+.Profile-image img, .profile-img {
+    width: 220px !important;
+    height: 220px !important;
     object-fit: cover;
     border-radius: 50% !important;
-
-    border: 5px solid white;
-    outline: 3px solid rgba(59,130,246,0.25);
-
-    box-shadow: 0 15px 40px rgba(15,23,42,0.15);
-
-    transition: var(--transition);
-    animation: float 6s ease-in-out infinite;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-
-.Profile-image img:hover,
-.profile-img:hover {
-    transform: scale(1.06);
-    outline-color: var(--accent-color);
-    box-shadow: 0 20px 50px rgba(59,130,246,0.2);
-}
-
-
 
 
 .connect-section {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
 }
 
 .social-links {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 14px;
-    margin-top: 1rem;
+    gap: 12px;
 }
 
-
-
-
-.btn,
-a[href*="github"],
-a[href*="linkedin"] {
-    position: relative;
-    overflow: hidden;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 11px 23px;
-    border-radius: 12px;
-
+.btn, a[href*="github"], a[href*="linkedin"] {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 650;
-
-    transition: var(--transition);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
-
-.btn::before,
-a[href*="github"]::before,
-a[href*="linkedin"]::before {
-    content: "";
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 60%;
-    height: 100%;
-
-    background: linear-gradient(
-        110deg,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-    transition: 0.6s;
+.btn-github, a[href*="github"] {
+    background-color: #24292e;
+    color: #ffffff !important;
 }
 
-.btn:hover::before,
-a[href*="github"]:hover::before,
-a[href*="linkedin"]:hover::before {
-    left: 150%;
+.btn-linkedin, a[href*="linkedin"] {
+    background-color: #0a66c2;
+    color: #ffffff !important;
 }
 
-.btn-github,
-a[href*="github"] {
-    background: linear-gradient(135deg, #24292e, #111827);
-    color: white !important;
-    box-shadow: 0 5px 15px rgba(15,23,42,0.15);
+.btn:hover, a[href*="github"]:hover, a[href*="linkedin"]:hover {
+    transform: translateY(-2px);
 }
-
-.btn-linkedin,
-a[href*="linkedin"] {
-    background: linear-gradient(135deg, #0a66c2, #084b91);
-    color: white !important;
-    box-shadow: 0 5px 15px rgba(10,102,194,0.18);
-}
-
-.btn:hover,
-a[href*="github"]:hover,
-a[href*="linkedin"]:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(15,23,42,0.2);
-}
-
-
-
-
-h3,
-h4 {
-    color: var(--text-heading);
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-}
-
-ul,
-ol {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-strong {
-    color: var(--text-heading);
-}
-
-
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 4px;
-    border-radius: 8px;
-}
-
-
-
-
-@media (max-width: 900px) {
-
-    .container {
-        width: min(100% - 32px, 750px);
-    }
-
-    .profile-section,
-    .profile-card {
-        gap: 2rem;
-    }
-
-    .profile-section,
-    .profile-card,
-    .project,
-    .testing,
-    .report,
-    .design {
-        padding: 2rem;
-    }
-}
-
-
 
 
 @media (max-width: 768px) {
-
-    header,
-    .main-header {
-        padding: 4rem 1rem 3.5rem !important;
-    }
-
-    header h1,
-    .header-content h1 {
-        letter-spacing: -1px;
-    }
-
-    nav,
-    .navbar {
-        gap: 5px;
-        padding: 0.8rem 0.5rem;
-    }
-
-    nav a,
-    .navbar a {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-
-    .container {
-        margin: 2rem auto;
-        width: calc(100% - 28px);
-    }
-
-    .profile-section,
-    .profile-card {
+    .profile-section, .profile-card {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 2rem 1.4rem;
-    }
-
-    .Profile-image img,
-    .profile-img {
-        width: 190px !important;
-        height: 190px !important;
+        padding: 1.5rem;
     }
 
     .social-links {
         justify-content: center;
     }
 
-    .connect-section {
-        text-align: center;
-    }
-
-    .project,
-    .testing,
-    .report,
-    .design {
-        padding: 1.5rem;
-    }
-}
-
-
-
-
-@media (max-width: 480px) {
-
-    header h1,
-    .header-content h1 {
-        font-size: 2.3rem;
-    }
-
-    .subtitle {
-        font-size: 0.95rem;
-    }
-
-    nav,
-    .navbar {
-        position: relative;
-    }
-
-    .container {
-        width: calc(100% - 22px);
-    }
-
-    .profile-section,
-    .profile-card,
-    .project,
-    .testing,
-    .report,
-    .design {
-        border-radius: 16px;
-        padding: 1.3rem;
-    }
-
-    .Profile-image img,
-    .profile-img {
-        width: 165px !important;
-        height: 165px !important;
-    }
-
-    .btn,
-    a[href*="github"],
-    a[href*="linkedin"] {
-        padding: 10px 16px;
-    }
-}
-
-
-
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    nav, .navbar {
+        flex-wrap: wrap;
     }
 }
